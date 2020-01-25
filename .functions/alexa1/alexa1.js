@@ -13,7 +13,6 @@ exports.handler = function(event, context, callback) {
 	*/
 	let intent = '';
 	if(event.body.request && event.body.intent) intent = event.body.intent.name;
-	console.log(`intent=${intent}`);
 
 	let text = '';
 
@@ -23,7 +22,6 @@ exports.handler = function(event, context, callback) {
 		text = 'Our products are ' + getProducts();
 	}
 
- 
 	let response = {
 		"version": "1.0",
 		"response" :{
