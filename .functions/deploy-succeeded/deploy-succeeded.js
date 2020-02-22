@@ -5,6 +5,10 @@ exports.handler = async (event, context) => {
     console.log('deploy succeeded run');
     console.log(JSON.stringify(event));
 
+    // get the time
+    let pubData = JSON.parse(event.body).payload;
+    console.log(JSON.stringify(pubData));
+
     return {
       statusCode: 200,
       body: ''
