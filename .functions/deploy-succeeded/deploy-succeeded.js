@@ -3,12 +3,16 @@ exports.handler = async (event, context) => {
   try {
 
     console.log('deploy succeeded run!');
-    console.log(JSON.stringify(event));
 
     // get the time
     let pubData = JSON.parse(event.body).payload;
     console.log(JSON.stringify(pubData));
+    let buildTime = pubData.publishedAt;
+    //in seconds;
+    let buildDuration = pubData.deploy_time;
 
+    console.log(`BUILT at ${buildTime} in ${buildDuration} seconds`);
+    
     return {
       statusCode: 200,
       body: ''
