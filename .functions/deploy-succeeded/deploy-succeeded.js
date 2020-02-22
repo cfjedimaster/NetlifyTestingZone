@@ -2,7 +2,7 @@
 exports.handler = async (event, context) => {
   try {
 
-    console.log('deploy succeeded run');
+    console.log('deploy succeeded run!');
     console.log(JSON.stringify(event));
 
     // get the time
