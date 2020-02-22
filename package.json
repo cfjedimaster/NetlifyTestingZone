@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/cfjedimaster/NetlifyTestingZone#readme",
   "dependencies": {
+    "@ringcentral/sdk": "^4.0.0",
     "netlify-lambda": "^1.6.3"
   }
 }
