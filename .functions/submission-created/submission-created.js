@@ -25,8 +25,9 @@ exports.handler = async (event, context) => {
 
   console.log(`name, ${name}, email, ${email}, comments, ${comments}`);
 
-  // The text to synthesize
-  const text = `A form was sent by ${name} (email address of ${email}), with these comments: ${comments}`;
+  const text = `
+A form was sent by ${name} (email address of ${email}), with these comments: 
+${comments}`;
   await sendSMS(text);
 
 }
