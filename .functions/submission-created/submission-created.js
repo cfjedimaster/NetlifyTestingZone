@@ -35,11 +35,6 @@ const client = new textToSpeech.TextToSpeechClient({
   }
 });
 
-// Creates a client
-const client = new textToSpeech.TextToSpeechClient({
-  credentials: creds
-});
-
 exports.handler = async (event, context) => {
 
   let payload = JSON.parse(event.body).payload;
