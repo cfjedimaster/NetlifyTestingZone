@@ -62,13 +62,16 @@ async function getSoundFile(text) {
     // select the type of audio encoding
     audioConfig: { audioEncoding: 'MP3' },
   };
-
+  console.log('defined request');
   // Performs the text-to-speech request
   const [response] = await client.synthesizeSpeech(request);
+  console.log('able to synth');
   // Write the binary audio content to a local file
   const writeFile = util.promisify(fs.writeFile);
+  console.log('did write file');
   // filename should be dynamic
   await writeFile('output.mp3', response.audioContent, 'binary');
+  console.log('writefile');
   return 'output.mp3';
 }
 
