@@ -46,8 +46,9 @@ exports.handler = async (event, context) => {
 
   // The text to synthesize
   const text = `A form was sent by ${name} (email address of ${email}), with these comments: ${comments}`;
-
+  console.log('try to make mp3');
   let mp3File = await getSoundFile(text);
+  console.log('got mp3');
   await sendSMS(mp3File, text);
 
 }
