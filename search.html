@@ -11,11 +11,13 @@
 			max-height: 125px;
 			margin-right: 10px;
 		}
+
+		[v-cloak] {display: none}
 	</style>
 </head>
 <body>
 	
-<div id="app">
+<div id="app" v-cloak>
 	<h2>Search</h2>
 	<p>
 	<input v-model="search" type="search"> <button @click="doSearch" :disabled="searching">Search</button>
