@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Search Test</title>
+	<style>
+		.thumbnail {
+			float: left;
+			max-width: 125px;
+			max-height: 125px;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+	
+<div id="app">
+	<h2>Search</h2>
+	<p>
+	<input v-model="search" type="search"> <button @click="doSearch" :disabled="searching">Search</button>
+	</p>
+
+	<div v-if="results">
+		<h3>Results</h3>
+		<div v-for="result in results">
+			<p>
+				<span v-if="result.thumbnail">
+					<img :src="result.thumbnail.src" :width="result.thumbnail.width" :height="result.thumbnail.height" class="thumbnail" />
+				</span>
+				<a :href="result.link" target="_new">{{ result.title }}</a><br/>
+				{{ result.snippet }}
+				<br clear="left" />
+			</p>
+		</div>
+		<p>
+		<span v-if="showPrevious"><button @click="doPrevious">Previous Results</button></span>
+		<span v-if="showNext"><button @click="doNext">Next Results</button></span>
+		</p>
+	</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="search.js"></script>
+</body>
+</html>
