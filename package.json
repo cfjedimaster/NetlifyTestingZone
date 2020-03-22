@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/cfjedimaster/NetlifyTestingZone#readme",
   "dependencies": {
-    "@google-cloud/text-to-speech": "^2.2.0",
     "@ringcentral/sdk": "^4.0.0",
     "netlify-lambda": "^1.6.3"
   }
