@@ -20,6 +20,14 @@ var platform = rcsdk.platform();
 exports.handler = async (event, context) => {
   try {
 
+    /*
+    added march22 2020 - don't need this demo anymore
+    */
+   return {
+    statusCode: 200,
+    body: ''
+    }
+
     console.log('deploy succeeded run!');
     let pubData = JSON.parse(event.body).payload;
 
@@ -29,7 +37,7 @@ exports.handler = async (event, context) => {
     let buildDuration = pubData.deploy_time;
 
     console.log(`BUILT at ${buildTime} in ${buildDuration} seconds`);
-    await sendSMS(buildTime, buildDuration);
+  //  await sendSMS(buildTime, buildDuration);
 
     return {
       statusCode: 200,
