@@ -13,7 +13,7 @@ const app = new Vue({
 
 	},
 	async created() {
-		let result = await fetch('/geosearch?at=30.22,-92.02&categories=101-070&limit=100');
+		let result = await fetch('/geosearch?at=30.22,-92.02&cat=101-070');
 		let data = await result.json();
 		console.log(data);
 	}
