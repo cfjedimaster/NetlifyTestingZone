@@ -4,18 +4,19 @@
 
 <body>
 <div id="app">
+{{ results }}
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
 const app = new Vue({
 	data: {
-
+		results:null
 	},
 	async created() {
 		let result = await fetch('/geosearch?at=30.22,-92.02&cat=101-070');
 		let data = await result.json();
-		console.log(data);
+		this.results = data.items;
 	}
 });
 </script>
