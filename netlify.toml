@@ -1,2 +1,7 @@
 [build]
 	functions = ".functions/"
+
+[[redirects]]
+  to = "/401.html"
+  status = 401
+  force = true
