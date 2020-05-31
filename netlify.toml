@@ -2,6 +2,7 @@
 	functions = ".functions/"
 
 [[redirects]]
+  from="/beta/*"
   to = "/401.html"
   status = 401
   force = true
