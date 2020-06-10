@@ -4,7 +4,9 @@
 
 <body>
 <div id="app">
-{{ results }}
+	<ul>
+	<li v-for="result in results">{{ result.title }} at {{ result.address.label }}</li>
+	</ul>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
