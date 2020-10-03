@@ -48,6 +48,9 @@ const app = new Vue({
 			fd.append('form-name', name);
 			let resp = await fetch(target, {
 				method:'POST',
+				headers: { 
+					'Content-Type': 'application/x-www-form-urlencoded' 
+				},
 				body:fd
 			});
 			let data = await resp.json();
