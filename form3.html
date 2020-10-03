@@ -8,7 +8,7 @@
 <body>
 	<h2>Contact Form</h2>
 
-	<form method="post" name="Contact Form 3" action="/thankyou.html" id="myForm"
+	<form method="post" name="Contact Form" action="/thankyou.html" id="myForm"
 	@submit.prevent="sendForm" ref="formTag" data-netlify="true">
 	<p>
 		<label for="name">Name:</label>
@@ -63,7 +63,7 @@ const app = new Vue({
 				},
 				body:encodedForm
 			});
-			
+
 //'name=ray&form-name=Contact+Form'
 //			let data = await resp.json();
 //			console.log(data);
