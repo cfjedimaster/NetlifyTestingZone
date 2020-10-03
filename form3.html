@@ -37,22 +37,29 @@ const app = new Vue({
 		comments:''
 	},
 	methods:{
+		encode(data) {
+			// Credit - Brian Rinaldi at https://www.stackbit.com/blog/complete-guide-netlify-forms/
+   			return Object.keys(data)
+			.map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+			.join("&");
+		},
 		async sendForm() {
 			let target = this.$refs.formTag.action;
 			let name = this.$refs.formTag.getAttribute('name');
 
-			let fd = new FormData();
-			fd.append('name', this.name);
-			fd.append('email', this.email);
-			fd.append('comments', this.comments);
-			fd.append('form-name', name);
-let fd2 = 'form-name=Contact+Form&name=ray';
+			let fd = {
+				'name':this.name,
+				'email':this.email,
+				'comments':this.comments,
+				'form-name':name
+			};
+
 			let resp = await fetch(target, {
 				method:'POST',
 				headers: { 
 					'Content-Type': 'application/x-www-form-urlencoded' 
 				},
-				body:fd2
+				body:this.encode(fd)
 			});
 //			let data = await resp.json();
 //			console.log(data);
