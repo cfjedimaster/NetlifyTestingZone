@@ -46,13 +46,13 @@ const app = new Vue({
 			fd.append('email', this.email);
 			fd.append('comments', this.comments);
 			fd.append('form-name', name);
-
+let fd2 = 'form-name=Contact+Form&name=ray';
 			let resp = await fetch(target, {
 				method:'POST',
 				headers: { 
 					'Content-Type': 'application/x-www-form-urlencoded' 
 				},
-				body:fd
+				body:fd2
 			});
 //			let data = await resp.json();
 //			console.log(data);
