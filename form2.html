@@ -3,12 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Special Contact FOrm</title>
+	<title>Special Contact Form</title>
+	<style>
+	.hidden {
+		display:none
+	}
+	</style>
 </head>
 <body>
 	<h2>Contact Form</h2>
 
-	<form method="post" name="Contact Form 2" action="/thankyou.html" data-netlify="true">
+	<form method="post" name="Contact Form 2" action="/thankyou.html" netlify-honeypot="hpfield" data-netlify="true">
+	<input class="hidden" name="hpfield">
 	<p>
 		<label for="name">Name:</label>
 		<input type="text" name="name" id="name">
