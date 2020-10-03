@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Special Contact Form</title>
+</head>
+<body>
+	<h2>Contact Form</h2>
+
+	<form method="post" name="Contact Form 3" action="/thankyou.html" id="myForm"
+	@submit.prevent="sendForm" ref="formTag">
+	<p>
+		<label for="name">Name:</label>
+		<input type="text" name="name" id="name" v-model="name">
+	</p>
+	<p>
+		<label for="email">Email:</label>
+		<input type="email" name="email" id="email" v-model="email">
+	</p>
+	<p>
+		<label for="comments">Comments:</label><br/>
+		<textarea name="comments" id="comments" v-model="comments"></textarea>
+	</p>
+	<p>
+		<input type="submit">
+	</p>
+	</form>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+const app = new Vue({
+	el:'#myForm',
+	data:{
+		name:'',
+		email:'',
+		comments:''
+	},
+	methods:{
+		async sendForm() {
+			console.log('testing');
+			let target = this.$refs.formTag.action;
+			let fd = new FormData();
+			fd.append('name', this.name);
+			fd.append('email', this.email);
+			fd.append('comments', this.comments);
+			let resp = await fetch(target, {
+				method:'POST',
+				headers: {
+				 	'Content-Type': 'application/x-www-form-urlencoded',
+ 				},
+				body:fd
+			});
+			let data = await resp.json();
+			console.log(data);
+		}
+	}
+});
+
+</script>
+
+</body>
+</html>
