@@ -40,10 +40,12 @@ const app = new Vue({
 		async sendForm() {
 			console.log('testing');
 			let target = this.$refs.formTag.action;
+			let name = this.$refs.formTag.name;
 			let fd = new FormData();
 			fd.append('name', this.name);
 			fd.append('email', this.email);
 			fd.append('comments', this.comments);
+			fd.append('form-name', name);
 			let resp = await fetch(target, {
 				method:'POST',
 				headers: {
