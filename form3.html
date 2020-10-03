@@ -9,7 +9,7 @@
 	<h2>Contact Form</h2>
 
 	<form method="post" name="Contact Form 3" action="/thankyou.html" id="myForm"
-	@submit.prevent="sendForm" ref="formTag">
+	@submit.prevent="sendForm" ref="formTag" data-netlify="true">
 	<p>
 		<label for="name">Name:</label>
 		<input type="text" name="name" id="name" v-model="name">
@@ -40,7 +40,7 @@ const app = new Vue({
 		async sendForm() {
 			console.log('testing');
 			let target = this.$refs.formTag.action;
-			let name = this.$refs.formTag.name;
+			let name = this.$refs.formTag.getAttribute('name');
 			let fd = new FormData();
 			fd.append('name', this.name);
 			fd.append('email', this.email);
