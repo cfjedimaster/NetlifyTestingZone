@@ -8,7 +8,7 @@
 <body>
 	<h2>Contact Form</h2>
 <!--  @submit.prevent="sendForm" ref="formTag"  -->
-	<form method="post" name="My Contact Form 7" action="/" id="myForm" netlify ref="formTag" >
+	<form method="post" name="My Contact Form 7" action="/thankyou.html" id="myForm" netlify ref="formTag" >
 	<p>
 		<label for="name">Name:</label>
 		<input type="text" name="name" id="name" v-model="name">
@@ -36,66 +36,24 @@ const app = new Vue({
 		comments:''
 	},
 	methods:{
-		encode(data) {
-			// Credit - Brian Rinaldi at https://www.stackbit.com/blog/complete-guide-netlify-forms/
-   			return Object.keys(data)
-			.map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-			.join("&");
-		},
 		async sendForm() {
 			let target = this.$refs.formTag.action;
 			let formName = this.$refs.formTag.getAttribute('name');
-
-			let fd = {
-				'name':this.name,
-				'email':this.email,
-				'comments':this.comments,
-				'form-name':name
-			};
-			
-			//let encodedForm = this.encode(fd);
-			//console.log(encodedForm);
-			
+		
 			let formData = new FormData();
 			formData.append('name', this.name);
 			formData.append('email', this.email);
 			formData.append('comments', this.comments);
 			formData.append('form-name', formName);
-			console.log(this.name, this.email, this.comments, formName);
-			console.log(JSON.stringify(formData));
-for (var value of formData.values()) {
-   console.log(value); 
-}			
-			/*
-			let resp = await fetch('/', {
-				method:'POST',
-				headers: { 
-					'Content-Type': 'application/x-www-form-urlencoded' 
-				},
-				body:encodedForm
-			});
-			*/
 
-/*
 			let resp = await fetch('/', {
 				method:'POST',
 				body:formData
 			});
-			*/ 
+			// assume ok, although double check
+			alert('Submitted!');
 
-		    let myForm = document.getElementById('myForm');
-			//let formData = new FormData(myForm);
 
-			fetch('/', {
-				method: 'POST',
-				body: formData
-			})
-			.then(() => alert('success!'))
-			.catch((error) => alert(error))
-
-//'name=ray&form-name=Contact+Form'
-//			let data = await resp.json();
-//			console.log(data);
 		}
 	}
 });
