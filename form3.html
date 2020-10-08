@@ -61,8 +61,11 @@ const app = new Vue({
 			formData.append('email', this.email);
 			formData.append('comments', this.comments);
 			formData.append('form-name', formName);
+			console.log(this.name, this.email, this.comments, formName);
 			console.log(JSON.stringify(formData));
-			
+for (var value of formData.values()) {
+   console.log(value); 
+}			
 			/*
 			let resp = await fetch('/', {
 				method:'POST',
