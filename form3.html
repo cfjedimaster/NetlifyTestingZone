@@ -8,7 +8,7 @@
 <body>
 	<h2>Contact Form</h2>
 
-	<form method="post" name="My Contact Form 7" action="/" id="myForm" @submit.prevent="sendForm" ref="formTag" data-netlify="true">
+	<form method="post" name="My Contact Form 7" action="/" ref="myForm" @submit.prevent="sendForm" ref="formTag" data-netlify="true">
 	<p>
 		<label for="name">Name:</label>
 		<input type="text" name="name" id="name" v-model="name">
@@ -55,14 +55,14 @@ const app = new Vue({
 			
 			//let encodedForm = this.encode(fd);
 			//console.log(encodedForm);
-			/*
+			
 			let formData = new FormData();
 			formData.append('name', this.name);
 			formData.append('email', this.email);
 			formData.append('comments', this.comments);
 			formData.append('form-name', formName);
-			console.log(formData);
-			*/
+			console.log(JSON.stringify(formData));
+			
 			/*
 			let resp = await fetch('/', {
 				method:'POST',
@@ -81,7 +81,8 @@ const app = new Vue({
 			*/ 
 
 		    let myForm = document.getElementById('myForm');
-			let formData = new FormData(myForm)
+			//let formData = new FormData(myForm);
+
 			fetch('/', {
 				method: 'POST',
 				body: formData
