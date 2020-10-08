@@ -55,12 +55,14 @@ const app = new Vue({
 			
 			//let encodedForm = this.encode(fd);
 			//console.log(encodedForm);
+			/*
 			let formData = new FormData();
 			formData.append('name', this.name);
 			formData.append('email', this.email);
 			formData.append('comments', this.comments);
 			formData.append('form-name', formName);
 			console.log(formData);
+			*/
 			/*
 			let resp = await fetch('/', {
 				method:'POST',
@@ -71,10 +73,23 @@ const app = new Vue({
 			});
 			*/
 
+/*
 			let resp = await fetch('/', {
 				method:'POST',
 				body:formData
 			});
+			*/ 
+
+			      let myForm = document.getElementById('myForm');
+      let formData = new FormData(myForm)
+      fetch('/', {
+    	method: 'POST',
+    	body: formData
+      })
+    	.then(() => alert('success!'))
+    	.catch((error) => alert(error))
+    }
+
 //'name=ray&form-name=Contact+Form'
 //			let data = await resp.json();
 //			console.log(data);
