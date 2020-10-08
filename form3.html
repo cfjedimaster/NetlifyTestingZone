@@ -80,15 +80,14 @@ const app = new Vue({
 			});
 			*/ 
 
-			      let myForm = document.getElementById('myForm');
-      let formData = new FormData(myForm)
-      fetch('/', {
-    	method: 'POST',
-    	body: formData
-      })
-    	.then(() => alert('success!'))
-    	.catch((error) => alert(error))
-    }
+		    let myForm = document.getElementById('myForm');
+			let formData = new FormData(myForm)
+			fetch('/', {
+				method: 'POST',
+				body: formData
+			})
+			.then(() => alert('success!'))
+			.catch((error) => alert(error))
 
 //'name=ray&form-name=Contact+Form'
 //			let data = await resp.json();
