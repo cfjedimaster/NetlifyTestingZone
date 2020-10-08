@@ -22,7 +22,7 @@
 		<textarea name="comments" id="comments" v-model="comments"></textarea>
 	</p>
 	<p>
-		<input type="submit">
+		<input type="submit" @click.prevent="sendForm">
 	</p>
 	</form>
 
