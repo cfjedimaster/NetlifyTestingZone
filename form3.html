@@ -45,7 +45,7 @@ const app = new Vue({
 		},
 		async sendForm() {
 			let target = this.$refs.formTag.action;
-			let name = this.$refs.formTag.getAttribute('name');
+			let formName = this.$refs.formTag.getAttribute('name');
 
 			let fd = {
 				'name':this.name,
@@ -54,8 +54,15 @@ const app = new Vue({
 				'form-name':name
 			};
 			
-			let encodedForm = this.encode(fd);
-			console.log(encodedForm);
+			//let encodedForm = this.encode(fd);
+			//console.log(encodedForm);
+			let formData = new FormData();
+			formData.append('name', this.name);
+			formData.append('email', this.email);
+			formData.append('comments', this.comments);
+			formData.append('form-name', formName);
+			console.log(formData);
+			/*
 			let resp = await fetch('/', {
 				method:'POST',
 				headers: { 
@@ -63,7 +70,12 @@ const app = new Vue({
 				},
 				body:encodedForm
 			});
+			*/
 
+			let resp = await fetch('/', {
+				method:'POST',
+				body:formData
+			});
 //'name=ray&form-name=Contact+Form'
 //			let data = await resp.json();
 //			console.log(data);
