@@ -20,8 +20,9 @@ Form Submitted at ${date}
 `;
 
 	for(let key in form.data) {
+    let field = key + ':';
 		content += `
-${key}:			${form.data[key]}
+${field.padEnd(50)} ${form.data[key]}
 `;
 	}
 
