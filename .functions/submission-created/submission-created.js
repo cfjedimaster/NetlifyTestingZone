@@ -29,6 +29,7 @@ ${JSON.stringify(form,null, '\t')}`;
 		if(error) {
 			console.log(error.response.body);
 		} else {
+      console.log('it worked',JSON.stringify(response));
       return {
         statusCode: 200,
         headers : {
