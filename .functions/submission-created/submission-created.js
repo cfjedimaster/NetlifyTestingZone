@@ -13,8 +13,17 @@ exports.handler = async event => {
 	let to_email = new helper.Email('raymondcamden@gmail.com');
 	let subject = 'Form Submission';
   
-  let content = `Form:
-${JSON.stringify(form,null, '\t')}`;
+  let date = new Date();
+	let content = `
+Form Submitted at ${date}
+--------------------------------
+`;
+
+	for(let key in payload.data) {
+		content += `
+${key}:			${payload.data[key]}
+`;
+	}
 
   let mailContent = new helper.Content('text/plain', content);
 	let mail = new helper.Mail(from_email, subject, to_email, mailContent);
