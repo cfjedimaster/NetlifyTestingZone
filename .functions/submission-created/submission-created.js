@@ -31,6 +31,7 @@ ${JSON.stringify(form,null, '\t')}`;
 
   console.log('um wtf 3');
 
+  /*
   sg.API(request, function(error, response) {
     console.log('did anything show up');
 		if(error) {
@@ -39,6 +40,9 @@ ${JSON.stringify(form,null, '\t')}`;
       console.log('it worked',JSON.stringify(response));
     }
 	});
-
+  */
+  let response = await sg.API(request);
+  console.log('it worked',JSON.stringify(response));
+  
   console.log('end of func');
 }
