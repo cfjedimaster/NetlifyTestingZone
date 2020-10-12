@@ -22,7 +22,7 @@ Form Submitted at ${date}
 	for(let key in form.data) {
     let field = key + ':';
 		content += `
-${field.padEnd(50)} ${form.data[key]}
+${field.padEnd(30)}${form.data[key]}
 `;
 	}
 
