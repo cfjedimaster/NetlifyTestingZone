@@ -19,9 +19,9 @@ Form Submitted at ${date}
 --------------------------------
 `;
 
-	for(let key in payload.data) {
+	for(let key in form.data) {
 		content += `
-${key}:			${payload.data[key]}
+${key}:			${form.data[key]}
 `;
 	}
 
