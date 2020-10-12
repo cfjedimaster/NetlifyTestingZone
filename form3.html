@@ -37,7 +37,6 @@ const app = new Vue({
 	},
 	methods:{
 		async sendForm() {
-			let target = this.$refs.formTag.action;
 			let formName = this.$refs.formTag.getAttribute('name');
 		
 			let formData = new FormData();
