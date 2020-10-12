@@ -14,6 +14,7 @@
   "author": "Netlify",
   "license": "MIT",
   "dependencies": {
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "sendgrid": "^5.2.3"
   }
 }
