@@ -13,11 +13,15 @@ exports.handler = async event => {
 	let to_email = new helper.Email('raymondcamden@gmail.com');
 	let subject = 'Form Submission';
 
+console.log('um wtf 0');
+  
   let content = `Form:
 ${JSON.stringify(form,null, '\t')}`;
 
   let mailContent = new helper.Content('text/plain', content);
 	let mail = new helper.Mail(from_email, subject, to_email, mailContent);
+
+  console.log('um wtf');
 
 	let request = sg.emptyRequest({
 		method: 'POST',
