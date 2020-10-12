@@ -29,21 +29,15 @@ ${JSON.stringify(form,null, '\t')}`;
 		body: mail.toJSON()
 	});
 
+  console.log('um wtf 3');
+
   sg.API(request, function(error, response) {
 		if(error) {
 			console.log(error.response.body);
 		} else {
       console.log('it worked',JSON.stringify(response));
-      return {
-        statusCode: 200,
-        headers : {
-          'Content-Type':'application/json'
-        },
-        body: { success: true } 
-      }
-
     }
 	});
 
-
+  console.log('end of func');
 }
