@@ -32,6 +32,7 @@ ${JSON.stringify(form,null, '\t')}`;
   console.log('um wtf 3');
 
   sg.API(request, function(error, response) {
+    console.log('did anything show up');
 		if(error) {
 			console.log(error.response.body);
 		} else {
