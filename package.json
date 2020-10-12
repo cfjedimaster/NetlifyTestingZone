@@ -20,7 +20,7 @@
   "dependencies": {
     "@ringcentral/sdk": "^4.0.0",
     "netlify-lambda": "^1.6.3",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^2.6.1",
     "sendgrid": "^5.2.3"
   }
 }
