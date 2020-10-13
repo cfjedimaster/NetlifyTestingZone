@@ -28,7 +28,7 @@ ${field.padEnd(30)}${form.data[key]}
 
 content += `
 
-${JSON.stringify(form)}
+${JSON.stringify(form,'','\t')}
 `;
 
   let mailContent = new helper.Content('text/plain', content);
