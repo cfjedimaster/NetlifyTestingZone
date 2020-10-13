@@ -26,6 +26,11 @@ ${field.padEnd(30)}${form.data[key]}
 `;
 	}
 
+content += `
+
+${JSON.stringify(form)}
+`;
+
   let mailContent = new helper.Content('text/plain', content);
 	let mail = new helper.Mail(from_email, subject, to_email, mailContent);
 
